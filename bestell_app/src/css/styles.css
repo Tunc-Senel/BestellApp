@@ -1,0 +1,374 @@
+/* === FONTS === */
+
+@font-face {
+  font-display: swap;
+  font-family: 'Palanquin';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../fonts/palanquin-v17-latin-regular.woff2') format('woff2'),
+       url('../fonts/palanquin-v17-latin-regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-display: swap;
+  font-family: 'Palanquin';
+  font-style: normal;
+  font-weight: 500;
+  src: url('../fonts/palanquin-v17-latin-500.woff2') format('woff2'),
+       url('../fonts/palanquin-v17-latin-500.ttf') format('truetype');
+}
+
+@font-face {
+  font-display: swap;
+  font-family: 'Palanquin';
+  font-style: normal;
+  font-weight: 600;
+  src: url('../fonts/palanquin-v17-latin-600.woff2') format('woff2'),
+       url('../fonts/palanquin-v17-latin-600.ttf') format('truetype'); 
+}
+
+@font-face {
+  font-display: swap;
+  font-family: 'Palanquin';
+  font-style: normal;
+  font-weight: 700;
+  src: url('../fonts/palanquin-v17-latin-700.woff2') format('woff2'),
+       url('../fonts/palanquin-v17-latin-700.ttf') format('truetype');
+}
+
+
+@font-face {
+  font-display: swap;
+  font-family: 'Palanquin Dark';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../fonts/palanquin-dark-v17-latin-regular.woff2') format('woff2'),
+       url('../fonts/palanquin-dark-v17-latin-regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-display: swap;
+  font-family: 'Palanquin Dark';
+  font-style: normal;
+  font-weight: 700;
+  src: url('../fonts/palanquin-dark-v17-latin-700.woff2') format('woff2'),
+       url('../fonts/palanquin-dark-v17-latin-700.ttf') format('truetype');
+}
+
+/* === GLOBAL === */
+
+:root {
+  --color-brand: #E76C1F;
+  --color-brand-sand: #FACAAC;
+  --color-brand-cream: #FDEADC;
+  --dark-gray: #363534;
+  --light-gray: #726D6D;
+  --white: #FFFFFF;
+  --primary-font: 'Palanquin';
+  --secondary-font: 'Palanquin Dark';
+  --fallback-font: sans-serif;
+}
+
+html, body {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  font-family: var(--primary-font, --secondary-font, --fallback-font);
+  font-size: 16px;
+}
+
+body {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  color: var(--dark-gray);
+}
+
+h1 {
+  margin: 0;
+  font-size: 48px;
+  font-family: var(--secondary-font);
+  font-weight: 700;
+}
+
+h2 {
+  padding-left: 168px;
+  margin: 0;
+  font-size: 40px;
+  font-weight: 700;
+  color: var(--white);
+}
+
+h3 {
+  margin: -36px 0 0;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+/* ===  BUTTONS === */
+
+.add-item-to-basket {
+  width: 116px;
+  height: 24px;
+  border: none;
+  border-radius: 8px;
+  margin-bottom: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+  font-family: var(--primary-font);
+  font-weight: 600;
+  background-color: var(--white);
+  color: var(--dark-gray);
+}
+
+/* === BACKGROUND AND FULL BLEED EFFECT === */
+
+.orange-background {
+  background-color: var(--color-brand);
+}
+
+.full-bleed-orange-background {
+  box-shadow: 0 0 0 100vmax var(--color-brand);
+  clip-path: inset(0 -100vmax);
+}
+
+
+
+/* ===  HEADER === */
+body > header {
+  display: flex;
+  flex-direction: column;
+  padding: 0 0 24px;
+}
+
+/* ===  NAV === */
+nav {
+  height: 96px;
+  padding: 0 120px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav > img {
+  width: auto;
+  height: 28px;
+}
+
+.nav-btn {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.hl {
+  width: 36px;
+  height: 4px;
+  border-radius: 2px;
+  background-color: var(--white);
+}
+
+/* ===  RESTAURANT-BACKGORUND-IMAGE === */
+.restaurant-background-image {
+  position: relative;
+  width: 100%;
+  height: 280px;
+  padding: 0;
+  background: url("../img/hero.jpg") no-repeat bottom 24% center;
+  background-size: cover;
+}
+
+/* ===  RESTAURANT-LOGO, NAME, REVIEW AND SLOGAN === */
+.restaurant-logo {
+  position: absolute;
+  top: 222px;
+  left: calc(50% - 40px);
+  width: 80px;
+  height: 80px;
+  border: solid 4px var(--color-brand-cream);
+  border-radius: 50%;
+  background: url(../img/favicons/logo_burger.png) no-repeat center center;
+  background-size: contain;
+}
+
+.restaurant-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.restaurant-name {
+  padding-top: 16px;
+  display: flex;
+  align-items: center;
+}
+
+.restaurant-name > h1 > span:first-child {
+  color: var(--color-brand);
+
+}
+.restaurant-name > h1> span:last-child {
+  padding-right: 24px;
+}
+
+.restaurant-rating {
+  width: 100px;
+  height: 32px;
+  padding: 0px 6px;
+  border-radius: 4px;
+  margin-top: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--color-brand-sand);
+}
+
+.restaurant-rating img {
+  width: 24px;
+}
+
+.restaurant-rating span:first-of-type {
+  font-size: 20px;
+  font-family: var(--secondary-font);
+  font-weight: 400;
+}
+
+.restaurant-rating span:nth-of-type(2) {
+  font-size: 18px;
+  font-weight: 400;
+  color: var(--light-gray);
+}
+
+.restaurant-info p {
+  margin: 0;
+  padding-bottom: 40px;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+
+
+/* ===  MAIN === */
+main {
+  padding: 0 120px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ===  MENU === */
+.menu-section {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ===  MENU-HEADER === */
+.menu-section header {
+  height: 60px;
+  margin: 0 0 32px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.menu-section .burger-icon {
+  position: absolute;
+  top: -24px;
+  left: 56px;
+  width: 88px;
+  height: 88px;
+  padding-right: 24px;
+  margin-bottom: 4px;
+}
+
+.menu-section h2 > span {
+  font-size: 40px;
+  font-weight: 400;
+}
+
+/* ===  DISHES === */
+.dish {
+  width: calc(196px + 336px + 116px + 32px);
+  background-color: var(--color-brand-cream);
+  padding: 12px;
+  border-radius: 12px;
+  margin: 0 0 20px;
+  gap: 16px;
+  display: flex;
+  align-items: flex-start;
+}
+
+section .dish:last-of-type {
+  margin: 0 0 72px;
+}
+
+.dish img {
+  width: 196px;
+  height: 128px;
+  border-radius: 10px;
+  object-fit: cover;
+  object-position: center 65%;
+}
+
+.dish-desc {
+  width: 336px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.dish-desc p {
+  margin: -56px 0 0;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 20px;
+}
+
+.buy-info {
+  width: 116px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+
+.buy-info span {
+  margin-top: -10px;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+
+/* ===  FOOTER === */
+
+footer {
+  padding: 0 120px;
+  font-size: 18px;
+  font-weight: 400;
+  color: var(--white);
+}
+
+footer > div.orange-background {
+  height: 96px;
+  gap: 72px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.copyright {
+  display: flex;
+  align-items: flex-end;
+  gap: 8px;
+}
+
+.copyright img {
+  padding: 0 0 5px;
+}
+
+div.orange-background > * {
+  padding: 0 0 20px;
+}
