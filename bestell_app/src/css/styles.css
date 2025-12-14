@@ -107,7 +107,7 @@ h3 {
 
 /* ===  BUTTONS === */
 
-.add-item-to-basket {
+.add-item-to-basket-btn {
   width: 116px;
   height: 24px;
   border: none;
@@ -121,7 +121,24 @@ h3 {
   font-weight: 600;
   background-color: var(--white);
   color: var(--dark-gray);
+  cursor: pointer;
 }
+
+/* .item-added-increase {
+
+} */
+
+/* .cart-item-increase {}
+
+.cart-item-decrease {}
+
+.cart-item-remove {} */
+
+
+
+
+
+
 
 /* === BACKGROUND AND FULL BLEED EFFECT === */
 
