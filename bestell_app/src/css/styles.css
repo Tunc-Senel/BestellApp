@@ -534,7 +534,7 @@ aside {
   color: var(--dark-gray);
 }
 
-.selected-items > article {
+.selected-items  article {
   padding: 22px 18px;
   border-radius: 12px;
   display: flex;
