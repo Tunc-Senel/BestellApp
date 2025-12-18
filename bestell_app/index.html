@@ -143,7 +143,7 @@
                 </div>
 
                  <!-- BASKET-EMPTY -->
-                <aside class="basket dNone">
+                <aside id="empty-basket" class="basket">
                         <header>
                             <h2>Your Basket</h2>
                         </header>
@@ -155,96 +155,33 @@
                 </aside>
 
                  <!-- BASKET-FILLED -->
-                <aside class="basket">
+                <aside id="filled-basket" class="basket dNone">
                         <header>
                             <h2>Your Basket</h2>
                         </header>
                         <div class="selected-items">
-                            <!-- <article>
-                                <div class="item-amount">
-                                    <span>1x Veggie mushroom black burger</span>
-                                    <div class="amount-control">
-                                        <button class="cart-item-remove">
-                                            <img src="./src/img/favicons/delete.png" alt="">
-                                        </button>
-                                        <span>
-                                            1
-                                        </span>
-                                        <button class="cart-item-increase-decrease">
-                                            <span>+</span>
-                                        </button>
-                                    </div>
-                                </div>
-                                <div class="item-price">
-                                    <span>16,90€</span>
-                                </div>
-                            </article>
-                            <article>
-                                <div class="item-amount">
-                                    <span>1x Veggie mushroom black burger</span>
-                                    <div class="amount-control">
-                                        <button class="cart-item-remove">
-                                            <img src="./src/img/favicons/delete.png" alt="">
-                                        </button>
-                                        <span>
-                                            1
-                                        </span>
-                                        <button class="cart-item-increase-decrease">
-                                            <span>+</span>
-                                        </button>
-                                    </div>
-                                </div>
-                                <div class="item-price">
-                                    <span>16,90€</span>
-                                </div>
-                            </article>
-                            <article>
-                                <div class="item-amount">
-                                    <span>1x Veggie mushroom black burger</span>
-                                    <div class="amount-control">
-                                        <button class="cart-item-remove">
-                                            <img src="./src/img/favicons/delete.png" alt="">
-                                        </button>
-                                        <span>
-                                            1
-                                        </span>
-                                        <button class="cart-item-increase-decrease">
-                                            <span>+</span>
-                                        </button>
-                                    </div>
-                                </div>
-                                <div class="item-price">
-                                    <span>16,90€</span>
-                                </div>
-                            </article> -->
+                
                         </div>
-                        <table>
-                            <tbody>
-                                <tr>
-                                <td>Subtotal</td>
-                                <td>36,70€</td>
-                            </tr>
-                            <tr>
-                                <td>Delivery fee</td>
-                                <td>4,99€</td>
-                            </tr>
-                            </tbody>
-
-                            <tfoot>
-                                <tr>
-                                <td>Total</td>
-                                <td>41,69€</td>
-                            </tr>
-                            </tfoot>
+                        <table class="order-costs">
+                            
                         </table>
                         <button class="buy-now-btn">
-                            <span>Buy now</span>
-                            <span>(41,69€)</span>
+                    
                         </button>
                  </aside>
                 
                 
-            </div>    
+            </div>   
+            
+            <!-- DIALOG -->
+            <dialog id="dialog" class="dNone">
+                <header>
+                    <button id="close-dialog" class="close-btn">&times;</button>
+                </header>
+                <img src="./src/img/favicons/delivery_vehicle.png" alt="">
+                <span>Order confirmed!</span>
+                <span>Your food is on the way!</span>
+            </dialog>
         </main>
 
         <!-- FOOTER -->

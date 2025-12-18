@@ -111,6 +111,23 @@ h3 {
 
 /* ===  BUTTONS === */
 
+.close-btn {
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  border: none;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  font-size: 28px;
+  font-family: var(--primary-font);
+  font-weight: 400;
+  background-color: transparent;
+  color: var(--color-brand-cream);
+  cursor: pointer;
+}
+
+
 .add-item-to-basket-btn {
   width: 116px;
   height: 24px;
@@ -605,4 +622,45 @@ aside {
 .selected-items::-webkit-scrollbar-thumb {
   border-radius: 8px;
   background: var(--color-brand-sand);
+}
+
+/* ===  DIALOG === */
+
+dialog {
+  padding: 16px 44px 24px;
+  border: none;
+  border-radius: 20px;
+  margin-top: 560px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--dark-gray);
+  color: var(--white);
+}
+
+dialog header {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+dialog img {
+  width: 80px;
+  height: 56px;
+  margin: 24px 0;
+}
+
+dialog span {
+  line-height: 44px;
+  color: var(--color-brand-cream);
+}
+
+dialog span:first-of-type {
+  font-size: 42px;
+  font-weight: 700;
+}
+
+dialog span:last-of-type {
+  font-size: 28px;
+  font-weight: 700;
 }

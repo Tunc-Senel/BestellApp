@@ -1,8 +1,12 @@
 // DOM element constants
 const LIST_OF_DISHES = Array.from(document.querySelectorAll("section.menu-section article"));
 const SELECTED_ITEMS = document.querySelector(".selected-items")
-
-
+const ORDER_COSTS_SECTION = document.querySelector(".order-costs")
+const BUY_NOW_BUTTON = document.querySelector(".buy-now-btn")
+const EMPTY_BASKET = document.getElementById("empty-basket")
+const FILLED_BASKET = document.getElementById("filled-basket")
+const DIALOG = document.querySelector("main dialog")
+const CLOSE_DIALOG_BUTTON = document.getElementById("close-dialog")
 
 // Object that holds the arrays for items in the basket
 const itemsInBasket = {
@@ -50,12 +54,14 @@ function addItemToBasket(index) {
   itemsInBasket.prices.push(dishes[index].price)
   itemsInBasket.amounts.push(1)
 
-  let currenBasketIndex = itemsInBasket.titles.length - 1 
+  toggleDnoneOnAddItem()
+  let currentBasketIndex = itemsInBasket.titles.length - 1 
 
   const LIST_OF_ADD_ITEM_TO_BASKET_SECTION = Array.from(document.querySelectorAll(".add-item-to-basket-section"));
-  LIST_OF_ADD_ITEM_TO_BASKET_SECTION[index].innerHTML = getAddedButtonSectionTemplate(index, itemsInBasket.amounts[currenBasketIndex], currenBasketIndex);
-  SELECTED_ITEMS.insertAdjacentHTML("beforeend", getItemInBasketTemplate(index, itemsInBasket.titles[currenBasketIndex], itemsInBasket.amounts[currenBasketIndex], itemsInBasket.prices[currenBasketIndex], currenBasketIndex));
+  LIST_OF_ADD_ITEM_TO_BASKET_SECTION[index].innerHTML = getAddedButtonSectionTemplate(index, itemsInBasket.amounts[currentBasketIndex], currentBasketIndex);
+  SELECTED_ITEMS.insertAdjacentHTML("beforeend", getItemInBasketTemplate(index, itemsInBasket.titles[currentBasketIndex], itemsInBasket.amounts[currentBasketIndex], itemsInBasket.prices[currentBasketIndex], currentBasketIndex));
   console.table(itemsInBasket);
+  calculateOrderSum()
 }
 
 /**
@@ -74,6 +80,7 @@ function increaseItemAmount(index, itemIndex) {
   ARTICLE_ITEM_IN_BASKET[itemIndex].innerHTML = getUpdateItemInBasketMinusButton(index, itemsInBasket.titles[itemIndex], itemsInBasket.amounts[itemIndex], itemsInBasket.prices[itemIndex], itemIndex)
   LIST_OF_ADD_ITEM_TO_BASKET_SECTION[index].innerHTML = getAddedButtonSectionTemplate(index, itemsInBasket.amounts[itemIndex], itemIndex);
   console.table(itemsInBasket);
+  calculateOrderSum()
 }
 
 /**
@@ -96,6 +103,7 @@ function decreaseItemAmount(index, itemIndex) {
   }
   LIST_OF_ADD_ITEM_TO_BASKET_SECTION[index].innerHTML = getAddedButtonSectionTemplate(index, itemsInBasket.amounts[itemIndex], itemIndex);
   console.table(itemsInBasket);
+  calculateOrderSum()
 }
 
 /**
@@ -105,13 +113,15 @@ function decreaseItemAmount(index, itemIndex) {
 *
 */ 
 function removeItemFromBasket(index, itemIndex) {
-   const LIST_OF_ADD_ITEM_TO_BASKET_SECTION = Array.from(document.querySelectorAll(".add-item-to-basket-section"))
+    const LIST_OF_ADD_ITEM_TO_BASKET_SECTION = Array.from(document.querySelectorAll(".add-item-to-basket-section"))
     itemsInBasket.titles.splice(itemIndex, 1)
     itemsInBasket.prices.splice(itemIndex, 1)
     itemsInBasket.amounts.splice(itemIndex, 1)
     LIST_OF_ADD_ITEM_TO_BASKET_SECTION[index].innerHTML = getDefaultButtonSetupInMenu(index)
     updateBasket();
     console.table(itemsInBasket);
+    calculateOrderSum()
+    toggleDnoneOnRemoveItem()
 }
 
 /**
@@ -119,27 +129,91 @@ function removeItemFromBasket(index, itemIndex) {
  *
  */
 function updateBasket() {
-  document.querySelector(".selected-items").innerHTML = "";
+  SELECTED_ITEMS.innerHTML = "";
   
   const LIST_OF_ADD_ITEM_TO_BASKET_SECTION = Array.from(document.querySelectorAll(".add-item-to-basket-section"));
 
-  for (let currenBasketIndex = 0; currenBasketIndex < itemsInBasket.titles.length; currenBasketIndex++) {
-    let currentDishIndex = dishNames.findIndex( dishName => dishName === itemsInBasket.titles[currenBasketIndex] )
-    if (itemsInBasket.amounts[currenBasketIndex] == 1) {
-        LIST_OF_ADD_ITEM_TO_BASKET_SECTION[currentDishIndex].innerHTML = getAddedButtonSectionTemplate(currentDishIndex, itemsInBasket.amounts[currenBasketIndex], currenBasketIndex);
-        SELECTED_ITEMS.insertAdjacentHTML("beforeend", getItemInBasketTemplate(currentDishIndex, itemsInBasket.titles[currenBasketIndex], itemsInBasket.amounts[currenBasketIndex], itemsInBasket.prices[currenBasketIndex], currenBasketIndex));
+  for (let currentBasketIndex = 0; currentBasketIndex < itemsInBasket.titles.length; currentBasketIndex++) {
+    let currentDishIndex = dishNames.findIndex( dishName => dishName === itemsInBasket.titles[currentBasketIndex] )
+    if (itemsInBasket.amounts[currentBasketIndex] == 1) {
+        LIST_OF_ADD_ITEM_TO_BASKET_SECTION[currentDishIndex].innerHTML = getAddedButtonSectionTemplate(currentDishIndex, itemsInBasket.amounts[currentBasketIndex], currentBasketIndex);
+        SELECTED_ITEMS.insertAdjacentHTML("beforeend", getItemInBasketTemplate(currentDishIndex, itemsInBasket.titles[currentBasketIndex], itemsInBasket.amounts[currentBasketIndex], itemsInBasket.prices[currentBasketIndex], currentBasketIndex));
     } else {
-        LIST_OF_ADD_ITEM_TO_BASKET_SECTION[currentDishIndex].innerHTML = getAddedButtonSectionTemplate(currentDishIndex, itemsInBasket.amounts[currenBasketIndex], currenBasketIndex);
-        SELECTED_ITEMS.insertAdjacentHTML("beforeend", getUpdateItemInBasketMinusButtonUpdate(currentDishIndex, itemsInBasket.titles[currenBasketIndex], itemsInBasket.amounts[currenBasketIndex], itemsInBasket.prices[currenBasketIndex], currenBasketIndex));
+        LIST_OF_ADD_ITEM_TO_BASKET_SECTION[currentDishIndex].innerHTML = getAddedButtonSectionTemplate(currentDishIndex, itemsInBasket.amounts[currentBasketIndex], currentBasketIndex);
+        SELECTED_ITEMS.insertAdjacentHTML("beforeend", getUpdateItemInBasketMinusButtonUpdate(currentDishIndex, itemsInBasket.titles[currentBasketIndex], itemsInBasket.amounts[currentBasketIndex], itemsInBasket.prices[currentBasketIndex], currentBasketIndex));
     }
+  }
+}
+
+/**
+ * Calculates the order sum including delivery fee and updates the order costs section and buy now button.
+ *
+ */
+function calculateOrderSum() {
+  ORDER_COSTS_SECTION.innerHTML = "";
+  BUY_NOW_BUTTON.innerHTML = "";
+
+  const deliveryFee = 4.99;
+  let subTotal = 0;
+  let sumOrder = 0;
+
+  for (let currentBasketIndex = 0; currentBasketIndex < itemsInBasket.titles.length; currentBasketIndex++) {
+    subTotal += itemsInBasket.prices[currentBasketIndex] * itemsInBasket.amounts[currentBasketIndex]
+    sumOrder += subTotal + deliveryFee
+  }
+
+  ORDER_COSTS_SECTION.innerHTML = getOrderCostsTemplate(subTotal, deliveryFee, sumOrder)
+  BUY_NOW_BUTTON.innerHTML = getBuyNowContentTemplate(sumOrder)
+}
+
+/**
+ * Toggles the visibility of the empty and filled basket sections when an item is added.
+ */
+function toggleDnoneOnAddItem() {
+  if(itemsInBasket.titles.length == 1) {
+    EMPTY_BASKET.classList.toggle("dNone")
+    FILLED_BASKET.classList.toggle("dNone")
+  } else {
+    ""
+  }
+}
+
+/**
+ * Toggles the visibility of the empty and filled basket sections when an item is removed.
+ */
+function toggleDnoneOnRemoveItem(){
+  if(itemsInBasket.titles.length == 0) {
+    EMPTY_BASKET.classList.toggle("dNone")
+    FILLED_BASKET.classList.toggle("dNone")
+  } else {
+    ""
   }
 }
 
 
 
-// render all articles with dish-data on init 
+/* render all articles with dish-data on init
+*  reset basket on buy now button click
+*  open dialog on buy now button click
+*  close dialog on close button click
+*/
 function init() {
+  renderDishes();
+  BUY_NOW_BUTTON.addEventListener("click", () =>{
+    itemsInBasket.titles.length = 0;
+    itemsInBasket.prices.length = 0;
+    itemsInBasket.amounts.length = 0;
+    updateBasket();
     renderDishes();
+    DIALOG.showModal()
+    DIALOG.classList.toggle("dNone")
+    FILLED_BASKET.classList.toggle("dNone")
+  });
+  CLOSE_DIALOG_BUTTON.addEventListener("click", () => {
+    DIALOG.close();
+    DIALOG.classList.toggle("dNone")
+  });
+
 }
 
 // Initialize the application init() when the window loads

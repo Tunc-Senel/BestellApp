@@ -193,3 +193,31 @@ function getDefaultButtonSetupInMenu(index) {
              <button onclick="addItemToBasket(${index})" class="add-item-to-basket-btn">Add to basket</button>
            `
 }
+
+function getOrderCostsTemplate(subTotal, deliveryFee, sumOrder) {
+    return `
+            <tbody>
+                <tr>
+                    <td>Subtotal</td>
+                    <td>${subTotal.toFixed(2).replace(".", ",")}€</td>
+                </tr>
+                <tr>
+                    <td>Delivery fee</td>
+                    <td>${deliveryFee.toFixed(2).replace(".", ",")}€</td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td>Total</td>
+                    <td>${sumOrder.toFixed(2).replace(".", ",")}€</td>
+                </tr>
+            </tfoot>
+           `
+}
+
+function getBuyNowContentTemplate(sumOrder) {
+    return `
+            <span>Buy now</span>
+            <span>${sumOrder.toFixed(2).replace(".", ",")}€</span>
+           `
+}
