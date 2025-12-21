@@ -3,84 +3,72 @@ let dishes = [
       "imageName": "veggie_mushroom_black_burger",
       "name": "Veggie mushroom black burger",
       "description": "Mixed green salad, Tomatoes, Edamame, Mushrooms",
-      "price": 16.9,
-      "amount": 0,
+      "price": 16.9
     },
     {
       "imageName": "all_meat_burger",
       "name": "All meat burger",
       "description": "Beef, Bacon, Dill pickles, Smoked cheese, Ketchup, BBQ souse",
-      "price": 15.9,
-      "amount": 0,
+      "price": 15.9
     },
     {
       "imageName": "beef_red_burger",
       "name": "Beef red burger",
       "description": "Beef, Cheese, Tomatoes, Lettuce, Onion",
-      "price": 14.9,
-      "amount": 0,
+      "price": 14.9
     },
     {
       "imageName": "big_chicken_burger",
       "name": "Big chicken burger",
       "description": "Chicken, Cheese, Tomatoes, Lettuce, Onion, Bell pepper",
-      "price": 15.9,
-      "amount": 0,
+      "price": 15.9
     },
     {
       "imageName": "pizza_margherita",
       "name": "Pizza Margherita",
       "description": "Tomato Sauce, Mozzarella",
-      "price": 11.9,
-      "amount": 0,
+      "price": 11.9
     },
     {
       "imageName": "chorizo_funghi_quattro",
       "name": "Pizza Chorizo",
       "description": "Tomato slices, Mozzarella, Chorizo",
-      "price": 13.9,
-      "amount": 0,
+      "price": 13.9
     },
     {
       "imageName": "chorizo_funghi_quattro",
       "name": "Funghi",
       "description": "Red onion, Olives, Button Mushrooms, Mozzarella",
-      "price": 12.9,
-      "amount": 0,
+      "price": 12.9
     },
     {
       "imageName": "chorizo_funghi_quattro",
       "name": "Quattro Formaggi with Chicken ",
       "description": "Chicken, Mozzarella, Gorgonzola, Fontina,  Parmigiano Reggiano",
-      "price":15.9,
-      "amount": 0,
+      "price":15.9
     },
     {
       "imageName": "warm_beef_arugula_salad",
       "name": "Warm beef arugula salad",
       "description": "Beef, Arugula, Field salad, Greek feta, Cherry tomatoes, Sun-dried Tomatoes, Balsamic-vinegar dressing",
-      "price": 16.9,
-      "amount": 0,
+      "price": 16.9
     },
     {
       "imageName": "mini_green_salad",
       "name": "Mini green Salad",
       "description": "Green salad, Cucumber, Carrots, Parsley, Radishes ",
-      "price": 7.9,
-      "amount": 0,
+      "price": 7.9
     },
     {
       "imageName": "green_salad_with_sea_food",
       "name": "Green Salad with sea food",
       "description": "Mixed greens, Cherry tomatoes, Red onion, Mussels, Squid rings, Shrimp, Dijon mustard-lemon dressing with dill",
-      "price": 16.9,
-      "amount": 0,
+      "price": 16.9
     },
     {
       "imageName": "vegan_green_salad_with_tofu",
       "name": "Vegan green salad with tofu",
       "description": "Mixed greens, Cherry tomatoes, Red onion, Mussels, Squid rings, Shrimp, Dijon mustard-lemon dressing with dill",
-      "price": 14.9,
-      "amount": 0,
+      "price": 14.9
     }
 ]

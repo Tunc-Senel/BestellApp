@@ -8,7 +8,7 @@
         <title>BestellApp</title>
 
         <!-- FAVICONS -->
-        <link rel="icon" type="image/png" href="./src/img/favicons/favicon-32x32.png">
+        <link rel="icon" type="image/png" href="./src/img/favicons/logo_favicon_32x32.png">
 
         <!-- AUTOREN-STYLESHEET -->
         <link rel="stylesheet" type="text/css" href="./src/css/styles.css">
@@ -17,183 +17,241 @@
 
     <body>
 
+        <!-- BACKDROP -->
+        <div class="backdrop"></div>
+
         <!-- HEADER -->
         <header>
+
             <!-- NAVIGATION-BAR -->
             <nav class="orange-background full-bleed-orange-background">
-                <img src="./src/img/favicons/Logo 02.svg" alt="">
-                <div class="nav-btn">
-                    <span class="hl"></span>
+                <img src="./src/img/favicons/Logo 02.svg" alt="Logo BestellApp">
+                <div class="nav-btn" aria-label="Navigation Menü">
+                    <span class="hl" ></span>
                     <span class="hl" ></span>
                     <span class="hl"></span>
                 </div>
             </nav>
+
             <!-- RESTAURANT-IMAGE-BANNER -->
-            <section class="restaurant-background-image">
-                <div class="restaurant-logo"></div>
+            <section class="restaurant-background-image" aria-label="Restaurant Banner mit Burgern, Pizza und Salat">
+                <div class="restaurant-logo" aria-label="Logo des Restaurants Burger Hause"></div>
             </section>
+
             <!-- RESTAURANT-INFO -->
             <section class="restaurant-info">
-                <div class="restaurant-name">
+                <div class="restaurant-name" aria-label="Name des Restaurants Burger Hause">
                     <h1>
                         <span>Burger</span><span>Hause</span>
                     </h1>
-                    <div class="restaurant-rating">
-                        <img src="./src/img/favicons/star.png" alt="Stern">
+                    <div class="restaurant-rating" aria-label="Bewertung 4,1 von 5 Sternen basierend auf 317 Bewertungen">
+                        <img src="./src/img/favicons/star.png" alt="Stern Icon">
                         <span>4,1</span>
                         <span>(317)</span>
                     </div>
                 </div>
-                <p>The best of Burgers, Pizza, and Greens, all in one great place.</p>
+                <p class="desktop-version" aria-label="Slogan des Restaurants">The best of Burgers, Pizza, and Greens, all in one great place.</p>
+                <p class="mobile-version" aria-label="Slogan des Restaurants">
+                    <span>The best of Burgers, Pizza, and</span>
+                    <span>Greens, all in one great place.</span>
+                </p>
             </section>
         </header>
 
         <!-- MAIN -->
         <main>
 
-
-            <div class="page-layout">
+            <!-- PAGE-LAYOUT -->
+            <div class="page-layout" aria-label="Seitenlayout">
 
                 <!-- MENU -->
-                <div class="menu-content">
+                <div class="menu-content" aria-label="Speisekarte">
                 
                     <!-- BURGER & SANDWICHES -->
-                    <section class="menu-section">
+                    <section class="menu-section" aria-label="Burger & Sandwiches">
                         <header class="orange-background full-bleed-orange-background">
                             <h2>Burger & Sandwiches</h2>
+                            <!-- MOBILE-HEADER -->
+                            <h2>Burger</h2>
                         </header>
-                        <img class="menu-header-icon" src="./src/img/favicons/burger_fav.png" alt="">
+                        <img class="menu-header-icon" src="./src/img/favicons/burger_fav.png" alt="Burger Icon">
 
                         <!-- DISH-1 -->
-                        <article class="dish">
+                        <article class="dish" aria-label="Erstes Burger und Sandwich Gericht">
                             <!-- dynamic content: dish-image, name, description, price -->
                         </article>
 
                         <!-- DISH-2 -->
-                        <article class="dish">
+                        <article class="dish" aria-label="Zweites Burger und Sandwich Gericht">
                             <!-- dynamic content: dish-image, name, description, price -->
                         </article>
 
                         <!-- DISH-3 -->
-                        <article class="dish">
+                        <article class="dish" aria-label="Drittes Burger und Sandwich Gericht">
                             <!-- dynamic content: dish-image, name, description, price -->
                         </article>
 
                         <!-- DISH-4 -->
-                        <article class="dish">
+                        <article class="dish" aria-label="Viertes Burger und Sandwich Gericht">
                             <!-- dynamic content: dish-image, name, description, price -->
                         </article>
                     </section>
                     
                     <!-- PIZZA -->
-                    <section class="menu-section">
+                    <section class="menu-section" aria-label="Pizza">
                         <header class="orange-background full-bleed-orange-background">
                             <h2>Pizza <span>(30cm)</span></h2>
                         </header>
-                        <img class="menu-header-icon" src="./src/img/favicons/pizza_fav.png" alt="">
+                        <img class="menu-header-icon" src="./src/img/favicons/pizza_fav.png" alt="Pizza Icon">
                         
                         <!-- DISH-1 -->
-                        <article class="dish">
+                        <article class="dish" aria-label="Erstes Pizza Gericht">
                             <!-- dynamic content: dish-image, name, description, price -->
                         </article>
 
                         <!-- DISH-2 -->
-                        <article class="dish">
+                        <article class="dish" aria-label="Zweites Pizza Gericht">
                             <!-- dynamic content: dish-image, name, description, price -->
                         </article>
 
                         <!-- DISH-3 -->
-                        <article class="dish">
+                        <article class="dish" aria-label="Drittes Pizza Gericht">
                             <!-- dynamic content: dish-image, name, description, price -->
                         </article>
 
                         <!-- DISH-4 -->
-                        <article class="dish">
+                        <article class="dish" aria-label="Viertes Pizza Gericht">
                             <!-- dynamic content: dish-image, name, description, price -->
                         </article>
                     </section>
 
                     <!-- SALAD -->
-                    <section class="menu-section">
+                    <section class="menu-section" aria-label="Salat">
                         <header class="orange-background full-bleed-orange-background">
                             <h2>Salad</h2>
                         </header>
-                        <img class="menu-header-icon" src="./src/img/favicons/salad_fav.png" alt="">
+                        <img class="menu-header-icon" src="./src/img/favicons/salad_fav.png" alt="Salat Icon">
                         
                         <!-- DISH-1 -->
-                        <article class="dish">
+                        <article class="dish" aria-label="Erstes Salat Gericht">
                             <!-- dynamic content: dish-image, name, description, price -->
                         </article>
 
                         <!-- DISH-2 -->
-                        <article class="dish">
+                        <article class="dish" aria-label="Zweites Salat Gericht">
                             <!-- dynamic content: dish-image, name, description, price -->
                         </article>
 
                         <!-- DISH-3 -->
-                        <article class="dish">
+                        <article class="dish" aria-label="Drittes Salat Gericht">
                             <!-- dynamic content: dish-image, name, description, price -->
                         </article>
 
                         <!-- DISH-4 -->
-                        <article class="dish">
+                        <article class="dish" aria-label="Viertes Salat Gericht">
                             <!-- dynamic content: dish-image, name, description, price -->
                         </article>
                     </section>
                 </div>
 
                  <!-- BASKET-EMPTY -->
-                <aside id="empty-basket" class="basket">
-                        <header>
-                            <h2>Your Basket</h2>
-                        </header>
-                        <p>
-                            <span>Nothing here yet.</span>
-                            <span>Go ahead and choose something delicious!</span>
-                        </p>
-                        <img src="./src/img/favicons/shopping_cart.png" alt="">
+                <aside id="empty-basket" class="basket dNone dNone-mobile" aria-label="Leerer Warenkorb">
+                    <button id="close-empty-basket" class="close-btn" aria-label="Leeren Warenkorb schließen">&times;</button>
+                    <header>
+                        <h2>Your Basket</h2>
+                    </header>
+                    <p>
+                        <span>Nothing here yet.</span>
+                        <span>Go ahead and choose something delicious!</span>
+                    </p>
+                    <img src="./src/img/favicons/shopping_cart.png" alt="Einkaufswagen Icon">
                 </aside>
 
                  <!-- BASKET-FILLED -->
-                <aside id="filled-basket" class="basket dNone">
-                        <header>
-                            <h2>Your Basket</h2>
-                        </header>
-                        <div class="selected-items">
-                
-                        </div>
-                        <table class="order-costs">
-                            
-                        </table>
-                        <button class="buy-now-btn">
-                    
-                        </button>
-                 </aside>
-                
-                
+                <aside id="filled-basket" class="basket dNone dNone-mobile" aria-label="Gefüllter Warenkorb">
+                    <button id="close-filled-basket" class="close-btn" aria-label="Gefüllten Warenkorb schließen">&times;</button>
+                    <header>
+                        <h2>Your Basket</h2>
+                    </header>
+                    <div class="selected-items" aria-label="Ausgewählte Artikel im Warenkorb">
+                        <!-- dynamic content: dish-name and price-->
+                    </div>
+                    <table class="order-costs" aria-label="Bestellkosten">
+                        <!-- dynamic content: delivery costs and total price -->
+                    </table>
+                    <button class="buy-now-btn" aria-label="Jetzt kaufen">
+                        <!-- dynamic content: buy now button -->
+                    </button>
+                </aside> 
             </div>   
             
-            <!-- DIALOG -->
-            <dialog id="dialog" class="dNone">
+            <!-- DIALOG-DESKTOP -->
+            <dialog id="dialog-desktop" class="dialog-desktop" aria-label="Bestellbestätigung">
                 <header>
-                    <button id="close-dialog" class="close-btn">&times;</button>
+                    <button id="close-dialog-desktop" class="close-btn" aria-label="Bestellbestätigung schließen">&times;</button>
                 </header>
-                <img src="./src/img/favicons/delivery_vehicle.png" alt="">
+                <img src="./src/img/favicons/delivery_vehicle.png" alt="Lieferfahrzeug Icon">
                 <span>Order confirmed!</span>
                 <span>Your food is on the way!</span>
             </dialog>
-        </main>
+        </main>    
 
         <!-- FOOTER -->
         <footer>
-            <div class="orange-background full-bleed-orange-background">
-                <div class="copyright">
+            <!-- LEGAL INFORMATION -->
+            <div class="orange-background full-bleed-orange-background" aria-label="Rechtliche Informationen">
+                <div class="copyright desktop-version">
                     <img src="./src/img/favicons/copyright.png" alt="">
                     <span>2025 BurgerHause</span>
                 </div>
-                <span>Imprint</span>
-                <span>Cookie Preferences</span>
+                <span class="desktop-version">Imprint</span>
+                <span class="mobile-version">Imprint</span>
+                <span class="desktop-version">Cookie Preferences</span>
+                <span class="mobile-version">Cookie Preferences</span>
+                <div class="copyright mobile-version">
+                    <img src="./src/img/favicons/copyright.png" alt="">
+                    <span>2025 BurgerHause</span>
+                </div>
             </div>
+
+            <!-- NAVIGATION -->
+            <nav class=".dark-gray-background full-bleed-dark-gray-background " aria-label="Hauptnavigation">
+                <ul>
+                    <li>
+                        <button aria-label="Home">
+                            <img src="./src/img/favicons/home_nav.png" alt="Hauptseite Icon">
+                        </button>
+                    </li>
+                    <li>
+                        <button aria-label="Profil">
+                            <img src="./src/img/favicons/person_nav.png" alt="Profil Icon">
+                        </button>
+                    </li>
+                    <li>
+                        <button aria-label="Takeout Dining">
+                            <img src="./src/img/favicons/takeout_dining_nav.png" alt="Takeout Dining Icon">
+                        </button>
+                    </li>
+                    <li>
+                        <button class="basket-filled-btn dNone" aria-label="Gefüllten Warenkorb öffnen">
+                            <img src="./src/img/favicons/shopping_cart_filled.png" alt="Gefüllter Warenkorb Icon">
+                            <span class="basket-count"></span>
+                        </button>
+                        <button class="basket-empty-btn" aria-label="Leeren Warenkorb öffnen">
+                            <img src="./src/img/favicons/shopping_cart_nav.png" alt="Leerer Warenkorb Icon">
+                        </button>
+                    </li>
+                </ul>
+            </nav>
+            <!-- DIALOG-MOBILE -->
+            <dialog id="dialog-mobile" class="dialog-mobile" aria-label="Bestellbestätigung">
+                <header>
+                    <button id="close-dialog-mobile" class="close-btn" aria-label="Bestellbestätigung schließen">&times;</button>
+                </header>
+                <img src="./src/img/favicons/delivery_vehicle.png" alt="Lieferfahrzeug Icon">
+                <span>Order confirmed!</span>
+                <span>Your food is on the way!</span>
+            </dialog>
         </footer>
 
         <!-- AUTOREN-JAVASCRIPT -->
