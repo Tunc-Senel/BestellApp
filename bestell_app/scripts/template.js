@@ -9,7 +9,7 @@
  */ 
 function getDishDescriptionTemplate(dishIndex, img, name, desc, price) {
     return `
-            <img src="./src/img/${dishes[dishIndex][img]}.jpg" alt="Bild von ${dishes[dishIndex][name]}">
+            <img src="./assets/img/${dishes[dishIndex][img]}.jpg" alt="Bild von ${dishes[dishIndex][name]}">
             <div class="dish-desc" label="Beschreibung von ${dishes[dishIndex][name]}">
                 <header>
                     <h3>
@@ -59,7 +59,7 @@ function getItemInBasketTemplate(index, name, amount, price, itemIndex) {
                     <span>${name}</span>
                     <div class="amount-control" aria-label="Artikelanzahl steuern">
                         <button onclick="removeItemFromBasket(${index}, ${itemIndex})" class="cart-item-remove" aria-label="Artikel ${name} aus dem Warenkorb entfernen">
-                            <img src="./src/img/favicons/delete.png" alt="Löschen Icon">
+                            <img src="./assets/img/favicons/delete.png" alt="Löschen Icon">
                         </button>
                         <span id="itemAmountInBasket" aria-label="Anzahl Artikel ${name} im Warenkorb">
                             ${amount}
@@ -155,7 +155,7 @@ function getDefaultButtonSetupInBasket(index, name, amount, price, itemIndex) {
                     <span>${name}</span>
                     <div class="amount-control" aria-label="Artikelanzahl steuern">
                         <button onclick="removeItemFromBasket(${index}, ${itemIndex})" class="cart-item-remove" aria-label="Artikel ${name} aus dem Warenkorb entfernen">
-                            <img src="./src/img/favicons/delete.png" alt="">
+                            <img src="./assets/img/favicons/delete.png" alt="">
                         </button>
                         <span id="itemAmountInBasket" aria-label="Anzahl Artikel ${name} im Warenkorb">
                             ${amount}
@@ -239,7 +239,7 @@ function getBuyNowContentTemplate(sumOrder) {
  */
 function getUpdateBasketCountMobile(itemsInBasket) {
     return `
-            <img src="./src/img/favicons/shopping_cart_filled.png" alt="Warenkorb Icon">
+            <img src="./assets/img/favicons/shopping_cart_filled.png" alt="Warenkorb Icon">
             <span class="basket-count">${itemsInBasket}</span>
             `
 }
