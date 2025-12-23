@@ -49,7 +49,7 @@ const dishNames = [
     "./assets/img/favicons/person_active_nav.png",
     "./assets/img/favicons/takeout_dining_active_nav.png",
     "./assets/img/favicons/shopping_cart_active_nav.png",
-    "./assets/img/favicons/shopping-cart-active_nav.png"
+    "./assets/img/favicons/shopping_cart_active_nav.png"
   ];
 
 /**

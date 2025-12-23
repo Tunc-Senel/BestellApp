@@ -1,4 +1,4 @@
-let dishes = [
+const dishes = [
     {
       "imageName": "veggie_mushroom_black_burger",
       "name": "Veggie mushroom black burger",
